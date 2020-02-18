@@ -1,0 +1,31 @@
+<br>
+<br>
+
+
+<center>
+<h1>Find events you love in Paris</h1>
+
+
+
+
+<body>
+    </div>
+    <section class="container mt-4 mb-4">
+      <h5 class="text-center mt-4 mb-4">The events are:</h5>
+
+      <center><%= link_to "Create an event", new_event_path, :class => "btn btn-primary my-2" %>
+      
+        <div  class="card-deck mb-3 d-flex justify-content-between">
+          <% @events.each.with_index(1) do |event, index| %>
+            <div class="col-sm-4 mt-6 mb-4">
+              <div class="card">
+                <div class="card-body d-flex align-items-center flex-column">
+                  <h5 class="card-title"><%= link_to "Event n°#{index}", events_path(event.id) %></h5>
+                  <p class="card-text"><%= event.title %></p>
+                </div>
+              </div>
+            </div>
+          <%end %>
+        </div>
+  </section>
+</body>

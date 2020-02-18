@@ -1,0 +1,35 @@
+<br /> <br />
+
+
+<center>
+
+    <%= form_tag events_path, method: "POST" do %>
+
+<%= label_tag 'Event title:' %>
+      <%= text_field_tag :title, params[:title]%>
+      <br /> <br />
+    
+<%= label_tag 'Event description (min 20 characters):' %>
+<%= text_field_tag :description, params[:description]%>
+<br /> <br />
+
+<%= label_tag 'Location:' %>
+<%= text_field_tag :location, params[:location]%>
+<br /> <br />
+
+<%= label_tag 'Start date (Format Y-M-D 2020-03-01):' %>
+<%= text_field_tag :start_date, params[:start_date]%>
+<br /> <br />
+
+<%= label_tag 'Duration in minutes (triple of 5):' %>
+<%= text_field_tag :duration, params[:duration]%>
+<br /> <br />
+
+<%= label_tag 'Price in €:' %>
+<%= text_field_tag :price, params[:price]%>
+<br /> <br />
+
+
+<%= submit_tag 'Save' %>
+<% end -%>
+</center>

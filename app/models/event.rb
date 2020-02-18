@@ -22,15 +22,20 @@ validates :location,
 
 
 
-def duration_must_be_multiple_of_five
-    unless duration % 5 == 0
-      errors.add(:duration, "must be multiple of 5")
+  def duration_must_be_multiple_of_five
+    if duration != nil
+      unless duration % 5 == 0
+        errors.add(:duration, "must be multiple of 5")
+      end
     end
   end
 
   def event_must_be_in_the_future
-    start_date > Time.now
-    errors.add(:start_date, "must be in the future")
+    if start_date != nil
+      unless start_date > Time.now
+        errors.add(:start_date, "must be in the future")
+      end
+    end
   end
 
 end
