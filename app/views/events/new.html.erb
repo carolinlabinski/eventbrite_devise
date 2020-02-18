@@ -13,40 +13,38 @@
 </div>
 <% end %>
 
-<center>
+ <center>
+<%= form_tag events_path, method: "POST" do %>
+    <div class="form-group mb-2">
+      <%= text_field_tag :title, params[:title], class: 'form-control col-sm-3', placeholder: 'Title* (between 5 and 140 characters)' %>
+    </div>
+    <br>
+    <div class="form-group mb-2">
+      <%= text_field_tag :start_date, params[:start_date], class: 'form-control col-sm-5', placeholder: 'Start date* (format : YYYY-MM-DD)' %>
+    </div>
+    <br>
+    <div class="form-group mb-2">
+      <%= text_field_tag :duration, params[:duration], class: 'form-control col-sm-5', placeholder: 'Duration* (in minutes and triple of 5)' %>
+    </div>
+    <br>
+    <div class="form-group mb-2">
+      <%= text_field_tag :price, params[:price], class: 'form-control col-sm-3', placeholder: 'Price* (between 1 and 1000 €)' %>
+    </div>
+    <br>
+     <div class="form-group mb-2">
+      <%= text_field_tag :location, params[:location], class: 'form-control col-sm-3', placeholder: 'Location*' %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= text_area_tag :description, params[:description], class: 'form-control col-sm-7', placeholder: 'Description*' %>
+    </div>
+    <br>
+      <%= submit_tag "Créer l'événement", class: 'btn btn-primary' %>
 
-    <%= form_tag events_path, method: "POST" do %>
+  <% end %>
+</div>
 
-<%= label_tag 'Event title:' %>
-      <%= text_field_tag :title, params[:title]%>
-      <br /> <br />
-    
-<%= label_tag 'Event description (min 20 characters):' %>
-<%= text_field_tag :description, params[:description]%>
-<br /> <br />
-
-<%= label_tag 'Location:' %>
-<%= text_field_tag :location, params[:location]%>
-<br /> <br />
-
-<%= label_tag 'Start date (Format Y-M-D 2020-03-01):' %>
-<%= text_field_tag :start_date, params[:start_date]%>
-<br /> <br />
-
-<%= label_tag 'Duration in minutes (triple of 5):' %>
-<%= text_field_tag :duration, params[:duration]%>
-<br /> <br />
-
-<%= label_tag 'Price in €:' %>
-<%= text_field_tag :price, params[:price]%>
-<br /> <br />
-
-
-<%= submit_tag 'Save' %>
-<% end -%>
 </center>
-
-  
 
 
 
