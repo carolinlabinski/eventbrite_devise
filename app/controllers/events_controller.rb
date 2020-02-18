@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  
   def index
     @events = Event.all
   end
@@ -7,6 +8,9 @@ class EventsController < ApplicationController
     @event=Event.new
   end
 
+  def show
+    @event = Event.find(params[:id])
+   end
 
 def create
   @event = Event.new(title: params[:title],description: params[:description],location: params[:location], start_date: params[:start_date],duration: params[:duration], price: params[:price])

@@ -1,0 +1,18 @@
+
+<h2 class="h1 mt-3 mb-4 ml-3 text-center">Discover the event: <%= @event.title %></h1>
+<container class="d-flex justify-content-around">
+  <div class="card-deck mb-3 d-flex justify-content-between" style="width: 36rem;">
+      <div class="card mx-4" style="width: 26rem;">
+        <div class="card-body">
+          <h5 class="card-title">Learn more about the event: '<%= @event.title %>'</h5>
+          <h4 class="card-text mb-4"><small class="text-muted">Event description: <%= @event.description %></small></h4>
+          <h4 class="card-text mb-4"><small class="text-muted">Location: <%= @event.location %></small></h4>
+          <h4 class="card-text mb-4"><small class="text-muted">Duration in min: <%= @event.duration %></small></h4>
+          <h4 class="card-text mb-4"><small class="text-muted">Price in € : <%=  @event.price %></small></h4>
+          <h4 class="card-text mb-4"><small class="text-muted">Start date: <%=  @event.start_date %></small></h4>
+        </div>
+      </div>
+    </div>
+    </container>
+  <br>
+  <p class="lead mt-3 mb-4 ml-3 text-center"><%= link_to "Return to the homepage", root_path, :class => "btn btn-primary" %></p>
