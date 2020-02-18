@@ -10,6 +10,7 @@
           <h4 class="card-text mb-4"><small class="text-muted">Duration in min: <%= @event.duration %></small></h4>
           <h4 class="card-text mb-4"><small class="text-muted">Price in € : <%=  @event.price %></small></h4>
           <h4 class="card-text mb-4"><small class="text-muted">Start date: <%=  @event.start_date %></small></h4>
+          <h4 class="card-text mb-4"><small class="text-muted">End date: <%=@event.start_date + @event.duration*60%></small></h4>
         </div>
       </div>
     </div>
