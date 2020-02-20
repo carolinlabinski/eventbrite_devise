@@ -9,12 +9,8 @@ class EventsController < ApplicationController
     @event=Event.new
   end
 
-  def show
-    @event = Event.find(params[:id])
-   end
-
 def create
-  @event = Event.new(title: params[:title],description: params[:description],location: params[:location], start_date: params[:start_date],duration: params[:duration], price: params[:price])
+  @event = Event.new(title: params[:title],description: params[:description],location: params[:location], start_date: params[:start_date],duration: params[:duration], price: params[:price], admin_id: current_user.id)
   
    if @event.save
     redirect_to(root_path, notice: "Event successfully created!")
@@ -23,5 +19,9 @@ def create
    
   end
   end
+
+  def show
+    @event = Event.find(params[:id])
+   end
 
 end

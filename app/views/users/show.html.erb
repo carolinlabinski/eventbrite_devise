@@ -1,0 +1,32 @@
+
+<br>
+<br>
+<center>
+<h2>Welcome   :<%= mail_to current_user.email %> </h2> 
+
+<div class="row">
+<% @event.each do |e| %>
+  <div class="col m3">
+    <div class="card">
+      <div class="card-image">
+        <img src="https://i.picsum.photos/id/337/300/150.jpg">
+      <div class="card-content">
+        <p style="color: #ff7043;"><%= e.start %></p>
+          <%= link_to e.title, event_path(e.id)%>
+        <p><small><%= e.location%></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+
+
+
+   
+
+
+  
+
